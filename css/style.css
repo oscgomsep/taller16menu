@@ -10,13 +10,15 @@ header{
 nav{
     margin-left: 80px;
     height: 60px;
+}
 
+nav ul:first-child{
+    background-color: #6B83B4;
+    color: white;
 }
-nav a:first-child{
-    background-color: ;
-}
-nav a{
-    margin-left: 30px;
+li a{
+    padding: 80px 10px 5px 10px;
+    text-decoration: none;
 }
 
 https://maikpwwq.github.io/Comunidad-dezzpo/
