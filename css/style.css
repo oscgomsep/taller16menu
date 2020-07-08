@@ -12,13 +12,41 @@ nav{
     height: 60px;
 }
 
-nav ul:first-child{
+nav a:first-child{
     background-color: #6B83B4;
     color: white;
+    border-style: solid;
+    border-color: #6B83B4;
+    border-bottom-width: 5px;
 }
-li a{
-    padding: 80px 10px 5px 10px;
+a{
+    position: relative;
+    top: 30px;
+    padding: 30px 10px 5px 10px;
     text-decoration: none;
+    margin: 0px;
+
+}
+nav a:hover{
+    border-style: solid;
+    border-color: #6B83B4;
+    border-width: 0px 0px 5px 0px;
+
+
+}
+
+main{
+    display: grid;
+    grid-template-columns: 20px 1220px 20px;
+    grid-template-rows: 1fr;
+}
+div{
+    width: 100%;
+    height: 1000px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-image: url("../img/reficar.jpg");
+    background-repeat: no-repeat;
 }
 
 https://maikpwwq.github.io/Comunidad-dezzpo/
