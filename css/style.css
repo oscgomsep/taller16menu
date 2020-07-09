@@ -7,7 +7,7 @@ header{
     height: 60px;
 
 }
-nav{
+nav {
     margin-left: 80px;
     height: 60px;
 }
@@ -19,36 +19,87 @@ nav a:first-child{
     border-color: #6B83B4;
     border-bottom-width: 5px;
 }
-a{
+
+nav a{
     position: relative;
     top: 30px;
     padding: 30px 10px 5px 10px;
     text-decoration: none;
     margin: 0px;
-
+    color: black;
 }
-nav a:hover{
+
+nav a:nth-child(n+2):hover{
     border-style: solid;
     border-color: #6B83B4;
     border-width: 0px 0px 5px 0px;
-
+    text-decoration-style: unset;
 
 }
 
 main{
     display: grid;
     grid-template-columns: 20px 1220px 20px;
-    grid-template-rows: 1fr;
+    grid-template-rows: 3fr 0.5fr 1.5fr;
 }
-div{
+.imgpri{
     width: 100%;
     height: 1000px;
     grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
     background-image: url("../img/reficar.jpg");
     background-repeat: no-repeat;
 }
 
-https://maikpwwq.github.io/Comunidad-dezzpo/
-https://19-orjuela.github.io/menu-imagen/
-https://dagon8523.github.io/Taller16/
+#contenido{
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+.transformacion{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.imgtrans{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#muro{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#murolargo{
+    position: relative;
+    top: 0px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    transform: scaleY(2);
+}
+
+footer{
+    background-color: #6B83B4;
+    color: white;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    padding-left: 10px;
+}
+.inspiracion a{
+    padding: 0px;
+}

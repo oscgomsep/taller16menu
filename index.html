@@ -5,27 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menús y fondos</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/LOGO AMVIESTRUC SAS - copia.png">
 </head>
 <body>
     <header>
-        <nav class="menu">
-
-            <a href="Contacto">Contacto</a>
-            <a href="Inicio">Inicio</a>
-            <a href="Nosotros">Nosotros</a>
-            <a href="Sectores">Sectores</a>
-            <a href="Casos de éxito">Casos de éxito</a>
-            <a href="Noticias">Noticias</a>
-            <a href="Destacados">Destacados</a>
-
-
+        <!-- menu de navegación -->
+        <nav>
+                    <a href="https://amviestruc.wixsite.com/amviestruc">
+                        Contacto
+                    </a>
+                    <a href="Inicio">
+                        Inicio
+                    </a>
+                    <a href="https://amviestruc.wixsite.com/amviestruc">Nosotros</a>
+                        <!-- <p>Sectores</p> -->
+                            <a href="#seccon">Construcción</a>
+                            <a href="#secali">Alimentos</a>
+                            <a href="#secmin">Minero y Petrólero</a>
+                            <a href="#secfar">Farmaceútico</a>
+                    <a href="Casos de éxito">Casos de éxito</a>
+                    <a href="Noticias">Noticias</a>
+                    <a href="Destacados">Destacados</a>
         </nav>
 
     </header>
     <main>
-        <div>
+        <!-- imagen de fondo -->
+        <div class="imgpri">
+
+        </div>
+        <!-- contenido de la pagina -->
+        <div id="contenido">
+            <section class="justificacion">
+                <p>El producto final del proyecto es una página que presenta un <b>sistema constructivo modular basado en PVC</b>, esta dirigida a diferentes sectores productivos como:</p>
+                <ul>
+                    <li id=seccon>Sector Construcción</li>
+                    <li id=secali>Sector Alimentos</li>
+                    <li id=secmin>Sector Minero y Petrólero</li>
+                    <li id=secfar>Sector Farmaceútico</li>
+                </ul>
+            </section>
+
+        </div>
+        <!-- transformación de imagenes -->
+        <div class="transformacion">
+            <p>A continuación el ejercicio de transformacion</p>
+            <div class="imgtrans">
+                <div id="muro">
+                    <img src="img/ensamblado.jpg" alt="">
+                </div>
+                <div id="murolargo">
+                    <img src="img/ensamblado.jpg" alt="">
+                </div>
+            </div>
+
 
         </div>
     </main>
+    <!-- pie con la inspiración de la pagina -->
+    <footer>
+        <section class="inspiracion">
+            <p>Esta página esta inspirada en una página de construcción tomada de: <a href="https://www.siteinspire.com/">www.siteinspire.com</a></p>
+            
+            <p>La página es: <a href="https://www.wates.co.uk/">www.wates.co.uk</a></p>
+            
+        </section>
+    </footer>
 </body>
 </html>
