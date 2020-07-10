@@ -7,52 +7,150 @@ header{
     height: 60px;
 
 }
+/* estilos del navegador */
 nav {
-    margin-left: 80px;
+    position: relative;
+    left: 10%;
     height: 60px;
 }
+/* diferenciacion del primer menu */
+nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
 
-nav a:first-child{
+}
+/* estilos de todos los menus */
+nav ul li > a{
+    position: relative;
+    top: 16px;
+    padding: 30px 10px 5px 10px;
+    text-decoration: none;
+
+    color: black;
+
+}
+nav ul li:first-child a{
     background-color: #6B83B4;
     color: white;
     border-style: solid;
     border-color: #6B83B4;
-    border-bottom-width: 5px;
+    border-bottom-width: 3px;
 }
 
-nav a{
-    position: relative;
-    top: 30px;
-    padding: 30px 10px 5px 10px;
-    text-decoration: none;
-    margin: 0px;
-    color: black;
-}
-
-nav a:nth-child(n+2):hover{
+/* estilos del segundo menu en adelante */
+nav ul li:nth-child(n+2) > a:hover{
     border-style: solid;
     border-color: #6B83B4;
-    border-width: 0px 0px 5px 0px;
+    border-width: 0px 0px 3px 0px;
     text-decoration-style: unset;
 
 }
 
+
+nav ul ul{
+    list-style-type: none;
+    overflow: visible;
+    z-index: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start;
+    height: 100%; */
+}
+
+
+nav ul ul li a{
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+/* estilo del cuerpo con una grilla */
 main{
     display: grid;
     grid-template-columns: 20px 1220px 20px;
-    grid-template-rows: 3fr 0.5fr 1.5fr;
+    grid-template-rows: 650px 0.5fr 1.5fr;
 }
+/* imagen de fondo */
 .imgpri{
     width: 100%;
-    height: 1000px;
+
+    height: 700px;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     background-image: url("../img/reficar.jpg");
+    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
+    animation-name: movimgprin;
+    animation-duration: 4s;
+}
+.imgpri > div{
+    position: relative;
+    top: 20%;
+    left: 30px;
+    width: 280px;
+    height: 350px;
+    overflow: hidden;
+    border-style: solid;
+    border-color: royalblue;
+    border-width: 2px;
+    animation-name: movdiv;
+    animation-duration: 4s;
+    background-color: royalblue;
+}
+.beneficios{
+    height: 0px;
+    animation-delay: 4.5s;
+    animation-name: movimg;
+    animation-duration: 15s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+}
+@keyframes movimgprin {
+    0% {transform: translate(100%);}
+    100% {transform: translate(0%);}
+}
+@keyframes movdiv {
+    from {
+        position: relative;
+        left: -1600px;
+    }
+    to{
+        position: relative;
+        left: 30px;
+    }
+}
+@keyframes movimg {
+    0% {height: 0px;}
+    20% {height: 60px;}
+    100% {height: 350px;}
 }
 
+/* estilo del contenido ubicación */
 #contenido{
 
     grid-column-start: 2;
@@ -61,36 +159,25 @@ main{
     grid-row-end: 3;
 
 }
+/* ejercicio de la transformación de la imagen */
 .transformacion{
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
+    display: flex;
+    flex-direction: column;
 }
 
 .imgtrans{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    height: 300px;
 }
-
-#muro{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 1;
-}
-
-#murolargo{
-    position: relative;
-    top: 0px;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 1;
+/* imagen transformadao */
+#muro img:hover{
     transform: scaleY(2);
 }
 
+/* pie descriptivo */
 footer{
     background-color: #6B83B4;
     color: white;
