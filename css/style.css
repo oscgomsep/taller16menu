@@ -2,92 +2,147 @@
 body{
     margin: 0px;
 }
-header{
-    background-color: white;
-    height: 60px;
-    margin-bottom: 5px;
-}
-/* estilos del navegador */
-nav {
-    position: relative;
-    left: 10%;
-    line-height: 60px;
-}
-/* diferenciacion del primer menu */
-nav ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    margin: 0px;
+@media only screen and (max-width: 480px)
+{
+    /* ocultación del pie descriptivo */
+    footer{
+        display: none;
+    }
+    .inspiracion a{
+        display: none;
+    }
 }
 
-nav ul li{
-  lin
-}
-/* estilos de todos los menus */
-nav ul li > a{
-    position: relative;
-    top: 10px;
-    padding: 30px 10px 5px 10px;
-    text-decoration: none;
-
-    color: black;
-
-}
-nav ul li:first-child a{
-    background-color: #6B83B4;
-    color: white;
-    border-style: solid;
-    border-color: #6B83B4;
-    border-bottom-width: 3px;
-}
-
-/* estilos del segundo menu en adelante */
-nav ul li:nth-child(n+2) > a:hover{
-    border-style: solid;
-    border-color: #6B83B4;
-    border-width: 0px 0px 3px 0px;
-    text-decoration-style: unset;
+@media (min-width: 481px) and (max-width: 768px)
+{
 
 }
 
-
-nav ul ul{
-    list-style-type: none;
-    overflow: visible;
-    z-index: 0;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start;
-    height: 100%; */
-}
-
-
-nav ul ul li a{
-    background-color: #ffffff;
-    padding: 10px;
-}
-
-.dropdown{
-    position: relative;
-    display: inline-block;
+@media only screen and  (min-width: 769px)
+{
+    header{
+        background-color: white;
+        height: 60px;
+        margin-bottom: 5px;
+    }
+    /* estilos del navegador */
+    nav {
+        position: relative;
+        left: 10%;
+        line-height: 60px;
+    }
+    /* diferenciacion del primer menu */
+    nav ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        margin: 0px;
+    }
     
+    nav ul li{
+      lin
+    }
+    /* estilos de todos los menus */
+    nav ul li > a{
+        position: relative;
+        top: 10px;
+        padding: 30px 10px 5px 10px;
+        text-decoration: none;
+    
+        color: black;
+    
+    }
+    nav ul li:first-child a{
+        background-color: #6B83B4;
+        color: white;
+        border-style: solid;
+        border-color: #6B83B4;
+        border-bottom-width: 3px;
+    }
+    
+    /* estilos del segundo menu en adelante */
+    nav ul li:nth-child(n+2) > a:hover{
+        border-style: solid;
+        border-color: #6B83B4;
+        border-width: 0px 0px 3px 0px;
+        text-decoration-style: unset;
+    
+    }
+    
+    
+    nav ul ul{
+        list-style-type: none;
+        overflow: visible;
+        z-index: 0;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-start;
+        height: 100%; */
+    }
+    
+    
+    nav ul ul li a{
+        background-color: #ffffff;
+        padding: 10px;
+    }
+    
+    .dropdown{
+        position: relative;
+        display: inline-block;
+        
+    }
+    
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+    
+    .dropdown:hover .dropdown-content{
+        display: block;
+    }
+
+    /* animación */
+    @keyframes movimgprin {
+        0% {transform: translate(100%);}
+        100% {transform: translate(0%);}
+    }
+    @keyframes movdiv {
+        from {
+            position: relative;
+            left: -1600px;
+        }
+        to{
+            position: relative;
+            left: 30px;
+        }
+    }
+    @keyframes movimg {
+        0% {height: 0px;}
+        20% {height: 60px;}
+        100% {height: 350px;}
+    }
+
+    /* pie descriptivo */
+    footer{
+        background-color: #6B83B4;
+        color: white;
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        padding-left: 10px;
+    }
+    .inspiracion a{
+        padding: 0px;
+    }
 }
 
-.dropdown-content{
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content{
-    display: block;
-}
 
 /* estilo del cuerpo con una grilla */
 main{
@@ -133,25 +188,7 @@ main{
     overflow: hidden;
     animation-fill-mode: forwards;
 }
-@keyframes movimgprin {
-    0% {transform: translate(100%);}
-    100% {transform: translate(0%);}
-}
-@keyframes movdiv {
-    from {
-        position: relative;
-        left: -1600px;
-    }
-    to{
-        position: relative;
-        left: 30px;
-    }
-}
-@keyframes movimg {
-    0% {height: 0px;}
-    20% {height: 60px;}
-    100% {height: 350px;}
-}
+
 
 /* estilo del contenido ubicación */
 #contenido{
@@ -243,19 +280,7 @@ main{
     transform: scaleY(2);
 }
 
-/* pie descriptivo */
-footer{
-    background-color: #6B83B4;
-    color: white;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    padding-left: 10px;
-}
-.inspiracion a{
-    padding: 0px;
-}
+
 
 /* fuentes de los iconos */
 @font-face {
