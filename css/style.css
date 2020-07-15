@@ -1,30 +1,38 @@
-*{font-family: Arial, sans-serif;}
+
+/* declaración de las fuentes que usaremos en la papgina */
+
+@font-face {
+    font-family: fuentenormal;
+    src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: fuentenegrilla;
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+    
+
+
+*{font-family: fuentenormal, Arial, sans-serif;}
+
+
 body{
     margin: 0px;
 }
-@media only screen and (max-width: 480px)
-{
-    /* ocultación del pie descriptivo */
-    footer{
-        display: none;
-    }
-    .inspiracion a{
-        display: none;
-    }
-}
 
-@media (min-width: 481px) and (max-width: 768px)
-{
+/* layout para moviles */
 
-}
 
-@media only screen and  (min-width: 769px)
+@media only screen and (max-width: 600px)
 {
-    header{
+    /* menus de la cabecera */
+        header{
         background-color: white;
         height: 60px;
         margin-bottom: 5px;
-    }
+        }
+
+
     /* estilos del navegador */
     nav {
         position: relative;
@@ -40,7 +48,7 @@ body{
     }
     
     nav ul li{
-      lin
+    lin
     }
     /* estilos de todos los menus */
     nav ul li > a{
@@ -107,6 +115,314 @@ body{
         display: block;
     }
 
+        /* animación */
+        @keyframes movimgprin {
+            0% {transform: translate(100%);}
+            100% {transform: translate(0%);}
+        }
+        @keyframes movdiv {
+            from {
+                position: relative;
+                left: -200%;
+            }
+            to{
+                position: relative;
+                left: 2%;
+            }
+        }
+        @keyframes movimg {
+            0% {height: 0px;}
+            100% {height: 250px;}
+        }
+    
+        /* estilo del cuerpo con una grilla */
+        main{
+            display: grid;
+            grid-template-columns: 5% 90% 5%;
+            grid-template-rows: 650px 0.5fr 1.5fr;
+        }
+        /* imagen de fondo */
+        .imgpri{
+            width: 100%;
+    
+            height: auto;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            background-image: url("../img/reficar.jpg");
+            background-position: center;
+            background-position: top;
+            background-repeat: no-repeat;
+            animation-name: movimgprin;
+            animation-duration: 4s;
+        }
+        .imgpri > div{
+            position: relative;
+            top: 5%;
+            left: 2%;
+            width: 200px;
+            height: auto;
+            overflow: hidden;
+            border-style: solid;
+            border-color: royalblue;
+            border-width: 2px;
+            animation-name: movdiv;
+            animation-duration: 4s;
+            background-color: royalblue;
+        }
+        .beneficios{
+            width: 200px;
+            height: 0px;
+            animation-delay: 4.5s;
+            animation-name: movimg;
+            animation-duration: 6s;
+            overflow: hidden;
+            animation-fill-mode: forwards;
+        }
+
+        .beneficios img{
+            width: 100%;
+        }
+    
+    
+        /* estilo del contenido ubicación */
+        #contenido{
+    
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+    
+        }
+    
+        .justificacion h3{
+            font-family: fuentenormal;
+            font-size: 50px;
+        }
+        .justificacion p b{
+            font-family: fuentenegrilla;
+            font-size: 20px;
+        }
+    
+    
+    /* aplicaciones de los iconos en los sectores */
+    
+        .segmentos{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+    
+        }
+    
+        .icon-laborario{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            padding: 30px;
+    
+        }
+        .icon-plantaciones{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            padding: 30px;
+    
+        }
+        .icon-industry{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            padding: 30px;
+    
+        }
+        .icon-aid-kit{
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            padding: 30px;
+    
+        }
+    
+        /* ejercicio de la transformación de la imagen */
+        .transformacion{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .imgtrans{
+            height: 300px;
+        }
+        /* imagen transformadao */
+        #muro img:hover{
+            transform: scaleY(2);
+        }
+    
+    
+    
+        /* fuentes de los iconos */
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('../fonts/icomoon.eot?5tinqw');
+            src:  url('../fonts/icomoon.eot?5tinqw#iefix') format('embedded-opentype'),
+            url('../fonts/icomoon.ttf?5tinqw') format('truetype'),
+            url('../fonts/icomoon.woff?5tinqw') format('woff'),
+            url('../fonts/icomoon.svg?5tinqw#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        
+        [class^="icon-"], [class*=" icon-"] {
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: 'icomoon' !important;
+            speak: never;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+        
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .icon-laborario:before {
+            content: "\e900";
+        }
+        .icon-plantaciones:before {
+            content: "\e901";
+        }
+        
+        .icon-industry:before {
+            content: "\e923";
+        }
+        .icon-aid-kit:before {
+            content: "\e998";
+        }
+    /* ocultación del pie descriptivo */
+        footer{
+            display: none;
+        }
+        .inspiracion a{
+            display: none;
+        }
+    
+    .justificacion h3{
+        font-family: fuentenormal;
+        font-size: 30px;
+    }
+    .justificacion p b{
+        font-family: fuentenegrilla;
+        font-size: 20px;
+    }
+}
+
+
+/* layout para computadores */
+
+@media only screen and  (min-width: 601px)
+{
+    /* menus de la cabecera */
+        header{
+            background-color: white;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+        /* estilos del navegador */
+        nav > span{
+            display: none;
+        }
+        nav {
+            position: relative;
+            left: 10%;
+            line-height: 60px;
+        }
+        /* diferenciacion del primer menu */
+        nav ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            margin: 0px;
+        }
+        
+        nav ul li{
+        lin
+        }
+        /* estilos de todos los menus */
+        nav ul li > a{
+            position: relative;
+            top: 10px;
+            padding: 30px 10px 5px 10px;
+            text-decoration: none;
+        
+            color: black;
+        
+        }
+        nav ul li:first-child a{
+            background-color: #6B83B4;
+            color: white;
+            border-style: solid;
+            border-color: #6B83B4;
+            border-bottom-width: 3px;
+        }
+        
+        /* estilos del segundo menu en adelante */
+        nav ul li:nth-child(n+2) > a:hover{
+            border-style: solid;
+            border-color: #6B83B4;
+            border-width: 0px 0px 3px 0px;
+            text-decoration-style: unset;
+        
+        }
+        
+        
+        nav ul ul{
+            list-style-type: none;
+            overflow: visible;
+            z-index: 0;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: flex-start;
+            height: 100%; */
+        }
+        
+        
+        nav ul ul li a{
+            background-color: #ffffff;
+            padding: 10px;
+        }
+        
+        .dropdown{
+            position: relative;
+            display: inline-block;
+            
+        }
+        
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+    
     /* animación */
     @keyframes movimgprin {
         0% {transform: translate(100%);}
@@ -115,7 +431,7 @@ body{
     @keyframes movdiv {
         from {
             position: relative;
-            left: -1600px;
+            left: -150%;
         }
         to{
             position: relative;
@@ -124,10 +440,181 @@ body{
     }
     @keyframes movimg {
         0% {height: 0px;}
-        20% {height: 60px;}
         100% {height: 350px;}
     }
 
+    /* estilo del cuerpo con una grilla */
+    main{
+        display: grid;
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 650px 0.5fr 1.5fr;
+    }
+    /* imagen de fondo */
+    .imgpri{
+        width: 100%;
+
+        height: auto;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background-image: url("../img/reficar.jpg");
+        background-position: center;
+        background-position: top;
+        background-repeat: no-repeat;
+        animation-name: movimgprin;
+        animation-duration: 4s;
+    }
+    .imgpri > div{
+        position: relative;
+        top: 20%;
+        left: 30px;
+        width: 280px;
+        height: 350px;
+        overflow: hidden;
+        border-style: solid;
+        border-color: royalblue;
+        border-width: 2px;
+        animation-name: movdiv;
+        animation-duration: 4s;
+        background-color: royalblue;
+    }
+    .beneficios{
+        height: 0px;
+        animation-delay: 4.5s;
+        animation-name: movimg;
+        animation-duration: 6s;
+        overflow: hidden;
+        animation-fill-mode: forwards;
+    }
+
+
+    /* estilo del contenido ubicación */
+    #contenido{
+
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+    }
+
+    .justificacion h3{
+        font-family: fuentenormal;
+        font-size: 50px;
+    }
+    .justificacion p b{
+        font-family: fuentenegrilla;
+        font-size: 20px;
+    }
+
+
+/* aplicaciones de los iconos en los sectores */
+
+    .segmentos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+
+    .icon-laborario{
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 30px;
+
+    }
+    .icon-plantaciones{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        padding: 30px;
+
+    }
+    .icon-industry{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 30px;
+
+    }
+    .icon-aid-kit{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 30px;
+
+    }
+
+    /* ejercicio de la transformación de la imagen */
+    .transformacion{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgtrans{
+        height: 300px;
+    }
+    /* imagen transformadao */
+    #muro img:hover{
+        transform: scaleY(2);
+    }
+
+
+
+    /* fuentes de los iconos */
+    @font-face {
+        font-family: 'icomoon';
+        src:  url('../fonts/icomoon.eot?5tinqw');
+        src:  url('../fonts/icomoon.eot?5tinqw#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?5tinqw') format('truetype'),
+        url('../fonts/icomoon.woff?5tinqw') format('woff'),
+        url('../fonts/icomoon.svg?5tinqw#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+    }
+    
+    [class^="icon-"], [class*=" icon-"] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+    
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    
+    
+    .icon-laborario:before {
+        content: "\e900";
+    }
+    .icon-plantaciones:before {
+        content: "\e901";
+    }
+    
+    .icon-industry:before {
+        content: "\e923";
+    }
+    .icon-aid-kit:before {
+        content: "\e998";
+    }
+    
     /* pie descriptivo */
     footer{
         background-color: #6B83B4;
@@ -143,184 +630,3 @@ body{
     }
 }
 
-
-/* estilo del cuerpo con una grilla */
-main{
-    display: grid;
-    grid-template-columns: 20px 1220px 20px;
-    grid-template-rows: 650px 0.5fr 1.5fr;
-}
-/* imagen de fondo */
-.imgpri{
-    width: 100%;
-
-    height: 700px;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    background-image: url("../img/reficar.jpg");
-    background-position: center;
-    background-position: top;
-    background-repeat: no-repeat;
-    animation-name: movimgprin;
-    animation-duration: 4s;
-}
-.imgpri > div{
-    position: relative;
-    top: 20%;
-    left: 30px;
-    width: 280px;
-    height: 350px;
-    overflow: hidden;
-    border-style: solid;
-    border-color: royalblue;
-    border-width: 2px;
-    animation-name: movdiv;
-    animation-duration: 4s;
-    background-color: royalblue;
-}
-.beneficios{
-    height: 0px;
-    animation-delay: 4.5s;
-    animation-name: movimg;
-    animation-duration: 15s;
-    overflow: hidden;
-    animation-fill-mode: forwards;
-}
-
-
-/* estilo del contenido ubicación */
-#contenido{
-
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-
-}
-
-/* aplicaciones de los iconos en los sectores */
-
-@font-face {
-    font-family: fuentesweb;
-    src: url("../fonts/ds-digi.TTF");
-}
-
-@font-face {
-    font-family: fuentesweb2;
-    src: url("../fonts/ds-digii.TTF");
-}
-    
-
-.justificacion h3{
-    font-family: fuentesweb;
-    font-size: 60px;
-}
-.justificacion p b{
-    font-family: fuentesweb2;
-    font-size: 30px;
-}
-
-.segmentos{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-
-}
-
-.icon-laborario{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    padding: 30px;
-
-}
-.icon-plantaciones{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    padding: 30px;
-
-}
-.icon-industry{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    padding: 30px;
-
-}
-.icon-aid-kit{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    padding: 30px;
-
-}
-
-/* ejercicio de la transformación de la imagen */
-.transformacion{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    display: flex;
-    flex-direction: column;
-}
-
-.imgtrans{
-    height: 300px;
-}
-/* imagen transformadao */
-#muro img:hover{
-    transform: scaleY(2);
-}
-
-
-
-/* fuentes de los iconos */
-@font-face {
-    font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?5tinqw');
-    src:  url('../fonts/icomoon.eot?5tinqw#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?5tinqw') format('truetype'),
-      url('../fonts/icomoon.woff?5tinqw') format('woff'),
-      url('../fonts/icomoon.svg?5tinqw#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-  
-  [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .icon-laborario:before {
-    content: "\e900";
-  }
-  .icon-plantaciones:before {
-    content: "\e901";
-  }
- 
-  .icon-industry:before {
-    content: "\e923";
-  }
-  .icon-aid-kit:before {
-    content: "\e998";
-  }
-  
