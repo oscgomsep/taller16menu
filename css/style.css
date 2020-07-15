@@ -317,6 +317,11 @@ body{
             display: none;
         }
     
+
+    /* cambio de fuentes */
+    body{
+        font-size: calc(0.5em + 1vw);
+    }
     .justificacion h3{
         font-family: fuentenormal;
         font-size: 30px;
@@ -498,7 +503,10 @@ body{
         grid-row-end: 3;
 
     }
-
+    /* cambio de fuentes */
+    *{
+        font-size: calc(0.6em + 1vw);
+    }
     .justificacion h3{
         font-family: fuentenormal;
         font-size: 50px;
