@@ -423,6 +423,10 @@ header{
         grid-row-end: 7;        
     }
 
+    /* forma de los icones de fontawesome */
+    .fuenteawe > i{
+        padding: 0px 5% 5% 0px;
+    } 
     /* fuentes de los iconos */
     @font-face {
         font-family: 'icomoon';
